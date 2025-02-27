@@ -1,3 +1,9 @@
 {
-  "extends": "./src/.umi/tsconfig.json"
+  "extends": "./src/.umi/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".", // 启用基础路径
+    "paths": {
+      "@/*": ["src/*"] // 路径映射
+    }
+  }
 }

@@ -5,6 +5,7 @@ import styles from "./login.less";
 import { Button } from "antd";
 import { useRef } from "react";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
+import request from "@/utils/request";
 const Login = () => {
     const formModalRef = useRef<FormInstance>(null);
     const items = [
@@ -41,7 +42,13 @@ const Login = () => {
 
     const handleLogin = () => {
         formModalRef.current?.validateFields().then(values => {
-            console.log('values', values)
+            request({
+                url: '/api/login',
+                method: 'post',
+                data: values,
+            }).then(res => {
+                console.log(res);
+            })
         });
     }
     return <div className={styles['login-content']}>

@@ -3,6 +3,9 @@ import { defineConfig } from 'umi';
 import routes from './route.config';
 
 export default defineConfig({
+    alias: {
+      '@': 'src', // 核心配置：@ 指向 src 目录
+    },
     // 基础配置
     npmClient: 'yarn', // 包管理器 (npm/yarn/pnpm)
     publicPath: '/public/', // 静态资源路径
