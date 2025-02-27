@@ -9,7 +9,8 @@
     "start": "npm run dev",
     "lint": "umi lint",
     "lintfix": "umi lint --fix",
-    "lintpretty": "umi lint --format pretty"
+    "lintpretty": "umi lint --format pretty",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@ant-design/icons": "^5.6.1",
@@ -28,6 +29,7 @@
     "@umijs/plugins": "^4.4.5",
     "eslint": "^9.21.0",
     "eslint-formatter-pretty": "^6.0.1",
+    "gh-pages": "^6.3.0",
     "stylelint": "^14",
     "typescript": "^5.0.3"
   }
