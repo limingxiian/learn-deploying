@@ -1,0 +1,5 @@
+*.d.ts
+mock/*
+public/*
+.umi/*
+config/*

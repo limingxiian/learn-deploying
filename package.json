@@ -1,0 +1,32 @@
+{
+  "private": true,
+  "author": "limingxian <305216313@qq.com>",
+  "scripts": {
+    "dev": "umi dev",
+    "build": "umi build",
+    "postinstall": "umi setup",
+    "setup": "umi setup",
+    "start": "npm run dev",
+    "lint": "umi lint",
+    "lintfix": "umi lint --fix",
+    "lintpretty": "umi lint --format pretty"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^5.6.1",
+    "@ant-design/pro-components": "^2.8.6",
+    "antd": "4.24.16",
+    "form-render": "^2.5.2",
+    "light-ui-rc": "^1.0.2",
+    "umi": "^4.4.5"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.33",
+    "@types/react-dom": "^18.0.11",
+    "@umijs/lint": "^4.4.5",
+    "@umijs/plugins": "^4.4.5",
+    "eslint": "^9.21.0",
+    "eslint-formatter-pretty": "^6.0.1",
+    "stylelint": "^14",
+    "typescript": "^5.0.3"
+  }
+}
