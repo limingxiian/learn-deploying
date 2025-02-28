@@ -1,13 +1,25 @@
-import FormModal from "@/components/common/FormModal";
-import { FormInstance } from 'antd/es/form';
-
-import styles from "./login.less";
-import { Button } from "antd";
 import { useRef } from "react";
+import { useLocation, useNavigate } from 'react-router-dom';
+import { Button } from "antd";
+import { FormInstance } from 'antd/es/form';
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
+
+import FormModal from "@/components/common/FormModal";
 import request from "@/utils/request";
+import styles from "./login.less";
+
+interface loginProps {
+    url: string,
+    method: string,
+    data: Record<string, any>,
+    headers: Record<string, any>,
+}
+
 const Login = () => {
     const formModalRef = useRef<FormInstance>(null);
+    const location = useLocation();
+    const navigate = useNavigate();
+    
     const items = [
         {
             type: 'input',
@@ -36,18 +48,24 @@ const Login = () => {
         },
         {
             type: 'custom',
-            content: <a href="https://github.com/limingxiian/limingxian.github.io" target="_blank">View Source Code</a>,
+            content: <a href="https://github.com/limingxiian/learn-deploying" target="_blank">View Source Code</a>,
         }
     ]
 
     const handleLogin = () => {
         formModalRef.current?.validateFields().then(values => {
-            request({
+            let params: loginProps = {
                 url: '/api/login',
                 method: 'post',
                 data: values,
-            }).then(res => {
-                console.log(res);
+                headers: {
+                  isToken: false
+                },
+            }
+            request(params).then((res) => {
+                if (res.code === 200) {
+                    navigate('/docs');
+                }
             })
         });
     }

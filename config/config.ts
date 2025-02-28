@@ -16,8 +16,13 @@ export default defineConfig({
   
     // 插件配置
     plugins: [
-        '@umijs/plugins/dist/antd'
+        '@umijs/plugins/dist/antd',
     ],
+    mock: {
+        enable: process.env.NODE_ENV === 'development', // 仅开发环境启用
+        // exclude: ['/api/prod/*'], // 可选：排除特定路由
+        // include: ['/api/mock'],  // 强制某些路径走 Mock（优先级高于 exclude）
+    },
 
     antd: {
         // 以下是可选配置
@@ -26,10 +31,6 @@ export default defineConfig({
         dark: false,           // 关闭暗黑模式
         compact: false,        // 关闭紧凑主题
         configProvider: {},    // 可配置 Ant Design 的 ConfigProvider
-        // theme: {               // 自定义主题变量
-        //   'primary-color': '#1890ff',
-        //   'border-radius-base': '4px',
-        // },
     },
 
     vite: {

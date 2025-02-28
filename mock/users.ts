@@ -15,7 +15,7 @@ export default defineMock({
     // 延迟 1 秒返回
     setTimeout(() => {
         if (username === 'admin' && password === '123456') {
-          res.send({ success: true });
+          res.send({ code: 200, token: '<PASSWORD>' });
         } else {
           res.status(401).send({ error: 'Invalid credentials' });
         }

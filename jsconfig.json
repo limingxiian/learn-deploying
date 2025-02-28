@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",    // 启用基础路径
+      "paths": {
+        "@/*": ["src/*"] // 别名 @ 指向 src 目录
+      },
+      "checkJs": true,   // 可选：启用 JS 类型检查
+      "module": "commonjs",
+      "target": "es6"
+    },
+    "include": ["src/**/*"], // 指定生效的目录
+    "exclude": ["node_modules", "dist"]
+  }
