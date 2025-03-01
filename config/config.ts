@@ -17,7 +17,9 @@ export default defineConfig({
     // 插件配置
     plugins: [
         '@umijs/plugins/dist/antd',
+        '@umijs/plugins/dist/model'
     ],
+    model: {},
     mock: {
         enable: process.env.NODE_ENV === 'development', // 仅开发环境启用
         // exclude: ['/api/prod/*'], // 可选：排除特定路由
@@ -74,6 +76,10 @@ export default defineConfig({
 //   chainWebpack(config) {
 //     config.resolve.alias.set('@components', '@/components');
 //   },
+
+    links: [
+        { rel: 'stylesheet', href: '//at.alicdn.com/t/c/font_4646180_ak176vp4e4.css' }, // 公共图标库
+    ],
 
     // 环境变量
     define: {

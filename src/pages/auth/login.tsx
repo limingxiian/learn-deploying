@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Button } from "antd";
 import { FormInstance } from 'antd/es/form';
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
@@ -17,7 +17,6 @@ interface loginProps {
 
 const Login = () => {
     const formModalRef = useRef<FormInstance>(null);
-    const location = useLocation();
     const navigate = useNavigate();
     
     const items = [
@@ -64,6 +63,8 @@ const Login = () => {
             }
             request(params).then((res) => {
                 if (res.code === 200) {
+                    // dispatch(changeName(res.data.name));
+                    // dispatch(changeToken(res.data.token));
                     navigate('/docs');
                 }
             })

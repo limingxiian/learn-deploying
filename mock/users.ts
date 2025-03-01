@@ -15,7 +15,17 @@ export default defineMock({
     // 延迟 1 秒返回
     setTimeout(() => {
         if (username === 'admin' && password === '123456') {
-          res.send({ code: 200, token: '<PASSWORD>' });
+          res.send({
+            code: 200,
+            data: {
+              id: 1,
+              name: 'admin',
+              roleId: '1',
+              roleName: 'admin',
+              token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJsb2dpblR5cGUiOiJsb2dpbiIsImxvZ2luSWQiOiJzeXNfdXNlcjoxIiwicm5TdHIiOiJwR2RBSUhibFRSRTJINHF3NWx1Zm1KMHFHSEk3V1VmbCIsInVzZXJJZCI6MX0.xpPtH2i-gtiU9IDFdAAP-P5pTSN1h6qVLH97OmfxUoo',
+            },
+            msg: '登录成功',
+          });
         } else {
           res.status(401).send({ error: 'Invalid credentials' });
         }

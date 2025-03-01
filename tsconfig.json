@@ -1,6 +1,7 @@
 {
   "extends": "./src/.umi/tsconfig.json",
   "compilerOptions": {
+    "jsx": "react-jsx",  // 或 "react"
     "baseUrl": ".", // 启用基础路径
     "paths": {
       "@/*": ["src/*"] // 路径映射
